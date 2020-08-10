@@ -19,7 +19,7 @@
             <input type="number" name="age" class="form-control">
         </div>
     </div>
-    <br>
+    <br><br>
     <div class="row">
         <div class="col-md-4">
             <label for="">PF Number</label>
