@@ -1,91 +1,70 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    @if(session()->has('success'))
-        <div class="alert alert-success">
-            {{ session()->get('success') }}
-        </div>
-    @endif
-    <div class="row">
+    <div class="container">
+        <div class="align-items-start col-md-12">
+            <div style="background: #ffffff;padding:10px" class="shadow-lg p-3 mb-4 bg-white rounded">
+                <h2>Doctor's Desk</h2>
+                <hr>
+                <div class="row">
+                    <div class="card shadow-lg p-3 mb-2 col-md-3 m-3" style="background: orange">
+                        <a href="/addDoctor" style="text-decoration: none;color:black">
+                            <div class="card-body text-center">
+                                <h5 class="card-text">Add New Doctor's Details</h5>
 
-        <div class="col-sm-3 ">
-            <a href="/register" style="text-decoration:none"> <div class="card-header mt-2 bg-primary" style="text-align: center"> <h5><font color="white">Registration Desk</font></h5> </div>
-             <div class="card-body" style="text-align:center;background:#e3e3e3"><h2><font color="black"><i class="fa fa-user-plus fa-3x" aria-hidden="true"></i></font></h2></div> </a>
-             
-             </div>
-           
-          
-        <div class="col-sm-3 ">
-                <a href="/health_unit" style="text-decoration:none;"><div class="card-header mt-2 bg-success" style="text-align: center"> <h5><font color="white">Health Unit</font></h5> </div>
-            <div class="card-body" style="text-align:center;background:#E3E3E3   "><h2><font color="black"><i class="fas fa-first-aid fa-3x" aria-hidden="true"></i></font></h2></div>
-                </a>
-           </div>
-         
-        
-          <div class="col-sm-3 ">
-             <a href="/jrh_emergency" style="text-decoration:none"> <div class="card-header mt-2 bg-danger" style="text-align: center"> <h5><font color="white">JRH Emergency</font></h5> </div>
-              <div class="card-body" style="text-align:center;background:#e3e3e3"><h2><font color="black"><i class="fa fa-ambulance fa-3x" aria-hidden="true"></i></font></h2></div> </a>
-              
-              </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card bg-success shadow-lg p-3 mb-2 col-md-3 m-3">
+                        <a href="/listDoctors" style="text-decoration: none;color:black">
+                            <div class="card-body text-center">
+                                <h5 class="card-text">List of Registered Doctors</h5>
+                            </div>
+                        </a>
+                    </div>
 
-              
-
-            <div class="col-sm-3 ">
-             <a href="/opd" style="text-decoration:none"> <div class="card-header mt-2 bg-dark" style="text-align: center"> <h5><font color="white">OPD Assignment</font></h5> </div>
-              <div class="card-body" style="text-align:center;background:#e3e3e3"><h2><font color="black"><i class="fa fa-user-md fa-3x" aria-hidden="true"></i></font></h2></div> </a>
-              
-              </div>
-           
-            
-
-              
-            </div> 
-            <br><br>
-
-        <div class="row">
-
-            <div class="col-sm-3 ">
-                <a href="/lab" style="text-decoration:none"> <div class="card-header mt-2 bg-primary" style="text-align: center"> <h5><font color="white">Laboratory</font></h5> </div>
-                 <div class="card-body" style="text-align:center;background:#e3e3e3"><h2><font color="black"><i class="fa fa-vial fa-3x" aria-hidden="true"></i></font></h2></div> </a>
-                 
-                 </div>
-
-                 <div class="col-sm-3 ">
-                    <a href="/radiology" style="text-decoration:none"> <div class="card-header mt-2 bg-success" style="text-align: center"> <h5><font color="white">Radiology</font></h5> </div>
-                     <div class="card-body" style="text-align:center;background:#e3e3e3"><h2><font color="black"><i class="fa fa-x-ray fa-3x" aria-hidden="true"></i></font></h2></div> </a>
-                     
-                     </div>
-                     <div class="col-sm-3 ">
-                        <a href="/pharmacy" style="text-decoration:none"> <div class="card-header mt-2 bg-danger" style="text-align: center"> <h5><font color="white">Pharmacy</font></h5> </div>
-                         <div class="card-body" style="text-align:center;background:#e3e3e3"><h2><font color="black"><i class="fa fa-tablets fa-3x" aria-hidden="true"></i></font></h2></div> </a>
-                         
-                         </div>
-                         <div class="col-sm-3 ">
-                            <a href="/indooradmission" style="text-decoration:none"> <div class="card-header mt-2 bg-dark" style="text-align: center"> <h5><font color="white">Indoor Admission</font></h5> </div>
-                             <div class="card-body" style="text-align:center;background:#e3e3e3"><h2><font color="black"><i class="fa fa-list-ol fa-3x" aria-hidden="true"></i></font></h2></div> </a>
-                             
-                             </div>
-
-        </div>
-        <br><br>
-        <div class="row">
-
-            <div class="col-sm-3 ">
-                <a href="/indooractivity" style="text-decoration:none"> <div class="card-header mt-2 bg-primary" style="text-align: center"> <h5><font color="white">Indoor Activities</font></h5> </div>
-                 <div class="card-body" style="text-align:center;background:#e3e3e3"><h2><font color="black"><i class="fa fa-running fa-3x" aria-hidden="true"></i></font></h2></div> </a>
-                 
-            </div>
-            <div class="col-sm-3 ">
-                <a href="/ot" style="text-decoration:none"> <div class="card-header mt-2 bg-success" style="text-align: center"> <h5><font color="white">Operation Theatres</font></h5> </div>
-                 <div class="card-body" style="text-align:center;background:#e3e3e3"><h2><font color="black"><i class="fa fa-cut fa-3x" aria-hidden="true"></i></font></h2></div> </a>
 
                 </div>
-                <div class="col-sm-3 ">
-                    <a href="/discharge" style="text-decoration:none"> <div class="card-header mt-2 bg-danger" style="text-align: center"> <h5><font color="white">Discharge Summary</font></h5> </div>
-                     <div class="card-body" style="text-align:center;background:#e3e3e3"><h2><font color="black"><i class="fa fa-clipboard-list fa-3x" aria-hidden="true"></i></font></h2></div> </a>
-               
-    
-</div>
-@endsection
 
+            </div>
+        </div>
+
+
+
+
+        <br>
+        <div class="col-md-12">
+            <div style="background: #ffffff;padding:10px" class="shadow-lg p-3 mb-4 bg-white rounded">
+                <h2>Daily Appointments Details - OPD Wise</h2>
+                <hr>
+
+                <div class="row ">
+
+                    @foreach ($OPDs as $item)
+
+                    <div class="card shadow-lg  mb-2 col-md-3 m-3" style="background:purple">
+                    <a href="/listAppointments/{{$item->Department}}" style="text-decoration: none;color:white">
+                            <div class="card-body text-center">
+                            <div class="card-text"><h5>{{$item->Department}}</h5></div>
+
+                            </div>
+                        </a>
+                    </div>
+
+
+                    @endforeach
+                </div>
+
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+    </div>
+@endsection

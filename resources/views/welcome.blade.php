@@ -1,102 +1,38 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
+@section('content')
+<div class="container">
+    <div class="d-flex justify-content-center">
+        <div style="background: #ffffff;padding:10px" class="shadow-lg p-3 mb-4 bg-white rounded ">
+            <h1 class="d-flex justify-content-center" style="font-family:Copperplate;"> OPD BOOKING - JRH MMCT </h1>
+            <hr>
+            <div class="row justify-content-center">
+                <img src="/wr_logo.png" width="30%" alt="Logo">
+            </div> <br>
+            <div class="row justify-content-center">
+                <div class="card shadow-lg p-2 mb-1 col-md-5 m-3" style="background:#e3e3e3">
+                    <a href="/make-appointment" style="text-decoration: none;color:black">
+                        <div class="card-body text-center">
+                            <h5 class="card-text"><b>BOOK OPD ONLINE</b></h5>
 
-        <title>JRH Management</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 64px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
+                        </div>
+                    </a>
                 </div>
-            @endif
-
-            <div class="content">
-                
-                <div class="title m-b-md">
-                    <img width="200" height="180" src="./wr_logo.png" alt="">
-                    <br>
-                    JRH MANAGEMENT
+                <div class="card shadow-lg p-2 mb-1 col-md-5 m-3" style="background:#e3e3e3">
+                    <a href="/home" style="text-decoration: none;color:black">
+                        <div class="card-body text-center">
+                            <h5 class="card-text"><b>ADMIN LOGIN</b></h5>
+                        </div>
+                    </a>
                 </div>
-
-                <div class="links">
-                    <a href="/home">Home</a>
-                    <a href="/newUser">New Registration</a>
-                    <a href="/home">Existing User</a>
-                    
-                </div>
-                <br><br>
-                <div style="background: pink ; margin:10px ; padding:10px; ">
-                <b> Designed and Developed by IT Cell , DRM Office , MMCT.</b> </div>
             </div>
+            <hr>
+            <div class="row justify-content-center" style="background:white ; margin:5px ; padding:5px; ">
+                <b> Developed by IT Cell , DRM Office , MMCT Division</b> </div>
+
+
         </div>
-    </body>
-</html>
+    </div>
+    <main-app></main-app>
+
+</div>
+@endsection
